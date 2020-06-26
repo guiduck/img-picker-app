@@ -10,9 +10,11 @@ const MapScreen = (props) => {
     latitudeDelta: 0.922,
     longitudeDelta: 0.0421,
   };
-  return <NapView region={mapRegion} />;
+  return <MapView style={styles.map} region={mapRegion} />;
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  map: { flex: 1 },
+});
 
 export default MapScreen;
