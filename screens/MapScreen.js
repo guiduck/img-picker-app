@@ -31,6 +31,7 @@ const MapScreen = (props) => {
     if (!selectedLocation) {
       return;
     }
+    console.log(selectedLocation);
     props.navigation.navigate('NewPlace', { pickedLocation: selectedLocation });
   }, [selectedLocation]);
 
@@ -54,7 +55,7 @@ const MapScreen = (props) => {
       onPress={selectLocationHandler}
     >
       {markerCoordinates && (
-        <Marker title='Picked Location' coordinate={markerCoordinates}></Marker>
+        <Marker title='Picked Location' coordinate={markerCoordinates} />
       )}
     </MapView>
   );
@@ -64,7 +65,7 @@ MapScreen.navigationOptions = (navData) => {
   const saveFn = navData.navigation.getParam('saveLocation');
 
   return {
-    headerRight: (
+    headerRight: () => (
       <TouchableOpacity style={styles.headerButton} onPress={saveFn}>
         <Text style={styles.headerButtonText}>Save</Text>
       </TouchableOpacity>
