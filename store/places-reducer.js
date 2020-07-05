@@ -21,13 +21,11 @@ export default (state = initialState, action) => {
             )
         ),
       };
-
     case ADD_PLACE:
       const newPlace = new Place(
-        new Date().toString(),
         action.placeData.id.toString(),
         action.placeData.title,
-        action.placeData.imageUri,
+        action.placeData.image,
         action.placeData.address,
         action.placeData.coords.lat,
         action.placeData.coords.lng

@@ -28,7 +28,7 @@ const PlaceDetailScreen = (props) => {
           <Text style={styles.address}> {selectedPlace.address} </Text>
         </View>
         <MapPreview
-          style={styles.MapPreview}
+          style={styles.mapPreview}
           location={selectedLocation}
           onPress={showMapHandler}
         />
